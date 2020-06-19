@@ -18,7 +18,7 @@ function App() {
       setResponse((data && data["message"]) || "empty...");
     });
 
-    socket.on("job_socket_test", (data) => {
+    socket.on("ping", (data) => {
       console.log("data received from job_socket_test:", data);
       setResponse((data && data["message"]) || "empty...");
     });
@@ -26,6 +26,21 @@ function App() {
     socket.on("message", (data) => {
       console.log("data received from message:", data);
       setResponse((data && data["message"]) || "empty...");
+    });
+
+    socket.on("ticker_data", (data) => {
+      console.log("data received from ticker_data:", data);
+      // setResponse((data && data["message"]) || "empty...");
+    });
+
+    socket.on("order_book", (data) => {
+      console.log("data received from order_book:", data);
+      // setResponse((data && data["message"]) || "empty...");
+    });
+
+    socket.on("ohlc_data", (data) => {
+      console.log("data received from ohlc_data:", data);
+      // setResponse((data && data["message"]) || "empty...");
     });
   }, []);
 
