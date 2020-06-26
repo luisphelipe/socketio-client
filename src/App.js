@@ -13,34 +13,9 @@ function App() {
       setResponse((data && data["message"]) || "empty...");
     });
 
-    socket.on((data) => {
-      console.log("data received from send:", data);
+    socket.on("recent_data", (data) => {
+      console.log("data received from recent_data:", data);
       setResponse((data && data["message"]) || "empty...");
-    });
-
-    socket.on("ping", (data) => {
-      console.log("data received from job_socket_test:", data);
-      setResponse((data && data["message"]) || "empty...");
-    });
-
-    socket.on("message", (data) => {
-      console.log("data received from message:", data);
-      setResponse((data && data["message"]) || "empty...");
-    });
-
-    socket.on("ticker_data", (data) => {
-      console.log("data received from ticker_data:", data);
-      // setResponse((data && data["message"]) || "empty...");
-    });
-
-    socket.on("order_book", (data) => {
-      console.log("data received from order_book:", data);
-      // setResponse((data && data["message"]) || "empty...");
-    });
-
-    socket.on("ohlc_data", (data) => {
-      console.log("data received from ohlc_data:", data);
-      // setResponse((data && data["message"]) || "empty...");
     });
   }, []);
 
